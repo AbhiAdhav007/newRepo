@@ -27,7 +27,7 @@ pipeline {
                     def testServer = 'ubuntu@ip-172-31-1-182'
 
                     // Replace 'https://github.com/rohitchavan2/project_edureka.git' with your Ansible playbook Git repository URL
-                    def ansibleRepo = 'https://github.com/rohitchavan2/project_edureka.git'
+                    def ansibleRepo = 'https://github.com/mukund-302/project_edureka.git'
 
                     // Clone the Ansible playbook repository
                     sh "git clone ${ansibleRepo} /tmp/ansible-repo"
@@ -48,7 +48,7 @@ pipeline {
             steps {
                 script {
                     // Replace 'https://github.com/rohitchavan2/project_edureka.git' with your Git repository URL
-                    def gitRepo = 'https://github.com/rohitchavan2/project_edureka.git'
+                    def gitRepo = 'https://github.com/mukund-302/project_edureka.git'
 
                     // Clone the Git repository
                     sh "git clone ${gitRepo} /tmp/php-web-app"
@@ -77,7 +77,7 @@ pipeline {
             // Send email on success
             emailext subject: "Job Succeeded: ${currentBuild.fullDisplayName}",
                       body: "The build of ${currentBuild.fullDisplayName} succeeded.",
-                      to: "rohit.chavan060898@gmail.com",
+                      to: "mukundadhav302@gmail.com",
                       recipientProviders: [[$class: 'DevelopersRecipientProvider']]
         }
 
@@ -85,7 +85,7 @@ pipeline {
             // Send email on failure
             emailext subject: "Job Failed: ${currentBuild.fullDisplayName}",
                       body: "The build of ${currentBuild.fullDisplayName} failed.",
-                      to: "rohit.chavan060898@gmail.com",
+                      to: "mukundadhav302@gmail.com",
                       recipientProviders: [[$class: 'DevelopersRecipientProvider']]
         }
     }
